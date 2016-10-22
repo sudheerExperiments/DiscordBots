@@ -4,8 +4,8 @@ import discord
 
 client = discord.Client()
 
-async def example_func(message):
-	print('In example func')
+async def connectionTest(message):
+	print('Connection is working good')
 	msg = await client.send_message(message.channel, 'Hi')
 	
 async def join(message):
@@ -50,7 +50,7 @@ async def on_message(message):
 	if(message.content.startswith('!join')):
                 await join(message)
 	if(message.content.startswith('!test')):
-		await example_func(message)
+		await connectionTest(message)
 	if(message.content.startswith('!math')):
 		await arithmetic(message)
 
